@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .solar_systm {
+  pointer-events: auto;
+}
+
+
+body .solar_systm .planet_description {
+  z-index: 10;
+  position: relative;
+  pointer-events: auto;
+}
+
+
+body .solar_systm .planet_description a {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+
+body .overlay {
+  pointer-events: auto;
+  z-index: -1;
+}
+
+h1,h2,h3{
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <div style="position: relative;top: 150px;"><h1 class="logo">Solar Explorer <span></span></h1></div>
+
+    <input type="radio" id="pluto" name="planet" class="planet9">
+    <label for="pluto" class="pluto menu">
+        <div class="preview"></div>
+        <div class="info">
+            <h2><span class="pip"></span>Pluto</h2>
+            <h3>39.5 AU</h3>
+        </div>
+    </label>
+
+    <input type="radio" id="neptune" name="planet" class="planet8">
+    <label for="neptune" class="neptune menu">
+        <div class="preview"></div>
+        <div class="info">
+            <h2><span class="pip"></span>Neptune</h2>
+            <h3>30.06 AU</h3>
+        </div>
+    </label>
+
+    <input type="radio" id="uranus" name="planet" class="planet7">
+    <label for="uranus" class="uranus menu">
+        <div class="preview"></div>
+        <div class="info">
+            <h2><span class="pip"></span>Uranus</h2>
+            <h3>19.18 AU</h3>
+        </div>
+    </label>
+
+    <input type="radio" id="saturn" name="planet" class="planet6">
+    <label for="saturn" class="saturn menu">
+        <div class="preview"></div>
+        <div class="info">
+            <h2><span class="pip"></span>Saturn</h2>
+            <h3>9.539 AU</h3>
+        </div>
+    </label>
+
+    <input type="radio" id="jupiter" name="planet" class="planet5">
+    <label for="jupiter" class="jupiter menu">
+        <div class="preview"></div>
+        <div class="info">
+            <h2><span class="pip"></span>Jupiter</h2>
+            <h3>5.203 AU</h3>
+        </div>
+    </label>
+
+    <input type="radio" id="mars" name="planet" class="planet4" checked>
+    <label for="mars" class="menu mars">
+        <div class="preview"></div>
+        <div class="info">
+            <h2><span class="pip"></span>Mars</h2>
+            <h3>1.524 AU</h3>
+        </div>
+    </label>
+
+    <input type="radio" id="earth" name="planet" class="planet3" checked>
+    <label for="earth" class="menu earth">
+        <div class="preview"></div>
+        <div class="info">
+            <h2><span class="pip"></span>Earth</h2>
+            <h3>1 AU</h3>
+        </div>
+    </label>
+
+    <input type="radio" id="venus" name="planet" class="planet2" checked>
+    <label for="venus" class="menu venus">
+        <div class="preview"></div>
+        <div class="info">
+            <h2><span class="pip"></span>Venus</h2>
+            <h3>0.723 AU</h3>
+        </div>
+    </label>
+
+    <input type="radio" id="mercury" name="planet" class="planet1" checked>
+    <label for="mercury" class="menu mercury">
+        <div class="preview"></div>
+        <div class="info">
+            <h2><span class="pip"></span>Mercury</h2>
+            <h3>0.39 AU</h3>
+        </div>
+    </label>
+
+    <div class="solar">
+      <div class="solar_systm">
+          <div class="planet mercury">
+              <div class="planet_description mercury">
+                  <h2>Planet</h2>
+                  <h1>Mercury</h1>
+                  <p>The closest planet to the sun. It circles the sun faster than all the other planets, which is why Romans named it after their swift-footed messenger god.</p>
+                  <label for="readMercury">
+                      <a class="read-more">Read More <span>e</span></a>
+                  </label>
+              </div>
+              <div class="overlay"></div>
+          </div>
+      </div>
+
+        <div class="solar_systm">
+            <div class="planet venus">
+                <div class="planet_description venus">
+                    <h2>Planet</h2>
+                    <h1>Venus</h1>
+                    <p>Named for the Roman goddess of love and beauty. In ancient times, Venus was often thought to be two different stars, the evening star and the morning star.</p>
+                    <label for="readVenus">
+                        <a>Read More <span>e</span></a>
+                    </label>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="solar_systm">
+            <div class="planet earth">
+                <div class="moon moon">
+                    <h3>Moon</h3>
+                    <h2>Moon</h2>
+                </div>
+                <div class="trajectory m"></div>
+                <div class="planet_description earth">
+                    <h2>Planet</h2>
+                    <h1>Earth</h1>
+                    <p>Earth, our home. It is the only planet known to have an atmosphere containing free oxygen, oceans of liquid water on its surface, and, of course, life.</p>
+                    <label for="readEarth">
+                        <a>Read More <span>e</span></a>
+                    </label>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="solar_systm">
+            <div class="planet mars">
+                <div class="moon deimos">
+                    <h3>Moon</h3>
+                    <h2>Deimos</h2>
+                </div>
+                <div class="trajectory d"></div>
+                <div class="moon phoebos">
+                    <h3>Moon</h3>
+                    <h2>Phoebos</h2>
+                </div>
+                <div class="trajectory p"></div>
+                <div class="planet_description mars">
+                    <h2>Planet</h2>
+                    <h1>Mars</h1>
+                    <p>Fourth planet from the Sun and the second smallest planet in the solar system. Named after the Roman god of war often described as the “Red Planet”.</p>
+                    <label for="readMars">
+                        <a>Read More <span>e</span></a>
+                    </label>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="solar_systm">
+            <div class="planet jupiter">
+                <div class="moon lo">
+                    <h3>Moon</h3>
+                    <h2>Io</h2>
+                </div>
+                <div class="moon europa">
+                    <h3>Moon</h3>
+                    <h2>Europa</h2>
+                </div>
+                <div class="moon ganymede">
+                    <h3>Moon</h3>
+                    <h2>Ganymede</h2>
+                </div>
+                <div class="trajectory lop"></div>
+                <div class="trajectory eu"></div>
+                <div class="trajectory ga"></div>
+                <div class="planet_description jupiter">
+                    <h2>Planet</h2>
+                    <h1>Jupiter</h1>
+                    <p>Jupiter is the largest planet in the solar system. Fittingly, it was named after the king of the gods in Roman mythology.</p>
+                    <label for="readJupiter">
+                        <a>Read More <span>e</span></a>
+                    </label>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="solar_systm">
+            <div class="planet saturn">
+                <div class="moon titan">
+                    <h3>Moon</h3>
+                    <h2>Titan</h2>
+                </div>
+                <div class="moon dione">
+                    <h3>Moon</h3>
+                    <h2>Dione</h2>
+                </div>
+                <div class="moon enceladus">
+                    <h3>Moon</h3>
+                    <h2>Enceladus</h2>
+                </div>
+                <div class="trajectory ti"></div>
+                <div class="trajectory di"></div>
+                <div class="trajectory enc"></div>
+                <div class="planet_description saturn">
+                    <h2>Planet</h2>
+                    <h1>Saturn</h1>
+                    <p>Saturn is the sixth planet from the sun and the second largest planet in the solar system. Saturn was the Roman name for Cronus, the lord of the Titans.</p>
+                    <label for="readSaturn">
+                        <a>Read More <span>e</span></a>
+                    </label>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="solar_systm">
+            <div class="planet uranus">
+                <div class="moon miranda">
+                    <h3>Moon</h3>
+                    <h2>Miranda</h2>
+                </div>
+                <div class="moon ariel">
+                    <h3>Moon</h3>
+                    <h2>Ariel</h2>
+                </div>
+                <div class="moon umbriel">
+                    <h3>Moon</h3>
+                    <h2>Umbriel</h2>
+                </div>
+                <div class="trajectory mir"></div>
+                <div class="trajectory ari"></div>
+                <div class="trajectory umb"></div>
+                <div class="planet_description uranus">
+                    <h2>Planet</h2>
+                    <h1>Uranus</h1>
+                    <p>The first planet to be discovered by scientists. The planet is notable for its dramatic tilt, which causes its axis to point nearly directly at the sun.</p>
+                    <label for="readUranus">
+                        <a>Read More <span>e</span></a>
+                    </label>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="solar_systm">
+            <div class="planet neptune">
+                <div class="moon triton">
+                    <h3>Moon</h3>
+                    <h2>Triton</h2>
+                </div>
+                <div class="moon proteus">
+                    <h3>Moon</h3>
+                    <h2>Proteus</h2>
+                </div>
+                <div class="moon nereid">
+                    <h3>Moon</h3>
+                    <h2>Nereid</h2>
+                </div>
+                <div class="trajectory tri"></div>
+                <div class="trajectory pro"></div>
+                <div class="trajectory ner"></div>
+                <div class="planet_description neptune">
+                    <h2>Planet</h2>
+                    <h1>Neptune</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                    <label for="readNeptune">
+                        <a>Read More <span>e</span></a>
+                    </label>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="solar_systm">
+            <div class="planet pluto">
+                <div class="planet_description pluto">
+                    <h2>Dwarf planet</h2>
+                    <h1>Pluto</h1>
+                    <p>Pluto, once considered the ninth and most distant planet from the sun, is now the largest known dwarf planet in the solar system.</p>
+                    <label for="readPluto">
+                        <a>Read More <span>e</span></a>
+                    </label>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+    </div>
+
+    <input type="radio" id="readMercury" name="mercuryRead" class="read">
+    <label for="closeMercury" class="closeBig"></label>
+    <input type="radio" id="closeMercury" name="mercuryRead" class="read">
+    <div class="panel" style="background-color: black;">
+        <h1 style="color: white;">Mercury</h1>
+        <p>Mercury is the closest planet to the sun. As such, it circles the sun faster than all the other planets, which is why Romans named it after their swift-footed messenger god.</p>
+        <p>The Sumerians also knew of Mercury since at least 5,000 years ago. It was often associated with Nabu, the god of writing. Mercury was also given separate names for its appearance as both a morning star and as an evening star. Greek astronomers knew, however, that the two names referred to the same body, and Heraclitus, around 500 B.C., correctly thought that both Mercury and Venus orbited the sun, not Earth.</p>
+        <img src="data:image/jpeg;base64,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" alt="Mercury">
+        <h2>A year on Mercury is just 88 days long.</h2>
+        <p>One solar day (the time from noon to noon on the planet’s surface) on Mercury lasts the equivalent of 176 Earth days while the sidereal day (the time for 1 rotation in relation to a fixed point) lasts 59 Earth days. Mercury is nearly tidally locked to the Sun and over time this has slowed the rotation of the planet to almost match its orbit around the Sun. Mercury also has the highest orbital eccentricity of all the planets with its distance from the Sun ranging from 46 to 70 million km.</p>
+        <h2>Mercury is the smallest planet in the Solar System.</h2>
+        <p>One of five planets visible with the naked eye a, Mercury is just 4,879 Kilometres across its equator, compared with 12,742 Kilometres for the Earth.</p>
+        <h2>Mercury is the second densest planet.</h2>
+        <p>Even though the planet is small, Mercury is very dense. Each cubic centimetre has a density of 5.4 grams, with only the Earth having a higher density. This is largely due to Mercury being composed mainly of heavy metals and rock.</p>
+        <h2>Mercury has wrinkles.</h2>
+        <p>As the iron core of the planet cooled and contracted, the surface of the planet became wrinkled. Scientist have named these wrinkles, Lobate Scarps. These Scarps can be up to a mile high and hundreds of miles long.</p>
+    </div>
+
+    <input type="radio" id="readVenus" name="venusRead" class="read">
+    <label for="closeVenus" class="closeBig"></label>
+    <input type="radio" id="closeVenus" name="venusRead" class="read">
+    <div class="panel">
+        <h1>Venus</h1>
+        <p>Venus, the second planet from the sun, is named for the Roman goddess of love and beauty. The planet — the only planet named after a female — may have been named for the most beautiful deity of her pantheon because it shone the brightest of the five planets known to ancient astronomers.</p>
+        <p>In ancient times, Venus was often thought to be two different stars, the evening star and the morning star — that is, the ones that first appeared at sunset and sunrise. In Latin, they were respectively known as Vesper and Lucifer. In Christian times, Lucifer, or "light-bringer," became known as the name of Satan before his fall. However, further observations of Venus in the space age show a very hellish environment. This makes Venus a very difficult planet to observe from up close, because spacecraft do not survive long on its surface.</p>
+        <img src="data:image/jpeg;base64,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" alt="Venus">
+        <h2>A day on Venus lasts longer than a year.</h2>
+        <p>It takes 243 Earth days to rotate once on its axis (sidereal day). The planet’s orbit around the Sun takes 225 Earth days, compared to the Earth’s 365. A day on the surface of Venus (solar day) takes 117 Earth days.</p>
+        <h2>Venus rotates in the opposite direction to most other planets.</h2>
+        <p>This means that Venus is rotating in the opposite direction to the Sun, this is also know as a retrograde rotation. A possible reason might be a collision in the past with an asteroid or other object that caused the planet to alter its rotational path. It also differs from most other planets in our solar system by having no natural satellites.</p>
+        <h2>Venus is the second brightest object in the night sky.</h2>
+        <p>Only the Moon is brighter. With a magnitude of between -3.8 to -4.6 Venus is so bright it can be seen during daytime on a clear day.</p>
+        <h2>Atmospheric pressure on Venus is 92 times greater than the Earth’s.</h2>
+        <p>While its size and mass are similar to Earth, the small asteroids are crushed when entering its atmosphere, meaning no small craters lie on the surface of the planet. The pressure felt by a human on the surface would be equivalent to that experienced deep beneath the sea on Earth.</p>
+    </div>
+
+    <input type="radio" id="readEarth" name="earthRead" class="read">
+    <label for="closeEarth" class="closeBig"></label>
+    <input type="radio" id="closeEarth" name="earthRead" class="read">
+    <div class="panel">
+        <h1>Earth</h1>
+        <p>Earth, our home, is the third planet from the sun. It is the only planet known to have an atmosphere containing free oxygen, oceans of liquid water on its surface, and, of course, life.</p>
+        <p>Earth is the fifth largest of the planets in the solar system — smaller than the four gas giants, Jupiter, Saturn, Uranus and Neptune, but larger than the three other rocky planets,</p>
+        <img src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Earth">
+        <h2>The Earth’s rotation is gradually slowing.</h2>
+        <p>This deceleration is happening almost imperceptibly, at approximately 17 milliseconds per hundred years, although the rate at which it occurs is not perfectly uniform. This has the effect of lengthening our days, but it happens so slowly that it could be as much as 140 million years before the length of a day will have increased to 25 hours.</p>
+        <h2>The Earth was once believed to be the centre of the universe.</h2>
+        <p>Due to the apparent movements of the Sun and planets in relation to their viewpoint, ancient scientists insisted that the Earth remained static, whilst other celestial bodies travelled in circular orbits around it. Eventually, the view that the Sun was at the centre of the universe was postulated by Copernicus, though this is also not the case.</p>
+        <h2>Earth has a powerful magnetic field.</h2>
+        <p>This phenomenon is caused by the nickel-iron core of the planet, coupled with its rapid rotation. This field protects the Earth from the effects of solar wind.</p>
+        <h2>There is only one natural satellite of the planet Earth.</h2>
+        <p>As a percentage of the size of the body it orbits, the Moon is the largest satellite of any planet in our solar system. In real terms, however, it is only the fifth largest natural satellite.</p>
+    </div>
+
+    <input type="radio" id="readMars" name="marsRead" class="read">
+    <label for="closeMars" class="closeBig"></label>
+    <input type="radio" id="closeMars" name="marsRead" class="read">
+    <div class="panel">
+        <h1>Mars</h1>
+        <p>Mars is the fourth planet from the sun. Befitting the red planet's bloody color, the Romans named it after their god of war. The Romans copied the ancient Greeks, who also named the planet after their god of war, Ares. Other civilizations also typically gave the planet names based on its color — for example, the Egyptians named it "Her Desher," meaning "the red one," while ancient Chinese astronomers dubbed it "the fire star."</p>
+        <img src="https://1.bp.blogspot.com/-ou7Je3OVg6U/WYtxDqjNp_I/AAAAAAAACSQ/fsopS5VtFg4bmlv8hQNfiRYfJqTygCotQCLcBGAs/s2048/Martian%2Blandscape%2Bby%2BAmante%2BLombardi.jpg" alt="Mars">
+        <h2>Mars and Earth have approximately the same landmass.</h2>
+        <p>Even though Mars has only 15% of the Earth’s volume and just over 10% of the Earth’s mass, around two thirds of the Earth’s surface is covered in water. Martian surface gravity is only 37% of the Earth’s (meaning you could leap nearly three times higher on Mars).</p>
+        <h2>Mars is home to the tallest mountain in the solar system.</h2>
+        <p>Olympus Mons, a shield volcano, is 21km high and 600km in diameter. Despite having formed over billions of years, evidence from volcanic lava flows is so recent many scientists believe it could still be active.</p>
+        <h2>Only 18 missions to Mars have been successful.</h2>
+        <p>As of September 2014 there have been 40 missions to Mars, including orbiters, landers and rovers but not counting flybys. The most recent arrivals include the Mars Curiosity mission in 2012, the MAVEN mission, which arrived on September 22, 2014, followed by the Indian Space Research Organization’s MOM Mangalyaan orbiter, which arrived on September 24, 2014. The next missions to arrive will be the European Space Agency’s ExoMars mission, comprising an orbiter, lander, and a rover, followed by NASA’s InSight robotic lander mission, slated for launch in March 2016 and a planned arrival in September, 2016.</p>
+        <h2>Mars has the largest dust storms in the solar system.</h2>
+        <p>They can last for months and cover the entire planet. The seasons are extreme because its elliptical (oval-shaped) orbital path around the Sun is more elongated than most other planets in the solar system.</p>
+    </div>
+
+    <input type="radio" id="readJupiter" name="jupiterRead" class="read">
+    <label for="closeJupiter" class="closeBig"></label>
+    <input type="radio" id="closeJupiter" name="jupiterRead" class="read">
+    <div class="panel">
+        <h1>Jupiter</h1>
+        <p>Jupiter is the largest planet in the solar system. Fittingly, it was named after the king of the gods in Roman mythology. In a similar manner, the ancient Greeks named the planet after Zeus, the king of the Greek pantheon.</p>
+        <p>Jupiter helped revolutionize the way we saw the universe and ourselves in 1610, when Galileo discovered Jupiter's four large moons — Io, Europa, Ganymede and Callisto, now known as the Galilean moons. This was the first time that celestial bodies were seen circling an object other than Earth, major support of the Copernican view that Earth was not the center of the universe.</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa9t70pFFmOi54gegTvkCawR4XVzz9iqUFSg&s" alt="Jupiter">
+        <h2>Jupiter is the fourth brightest object in the solar system.</h2>
+        <p>Only the Sun, Moon and Venus are brighter. It is one of five planets visible to the naked eye from Earth.</p>
+        <h2>The ancient Babylonians were the first to record their sightings of Jupiter.</h2>
+        <p>This was around the 7th or 8th century BC. Jupiter is named after the king of the Roman gods. To the Greeks, it represented Zeus, the god of thunder. The Mesopotamians saw Jupiter as the god Marduk and patron of the city of Babylon. Germanic tribes saw this planet as Donar, or Thor.</p>
+        <h2>Jupiter has the shortest day of all the planets.</h2>
+        <p>It turns on its axis once every 9 hours and 55 minutes. The rapid rotation flattens the planet slightly, giving it an oblate shape.</p>
+        <h2>Jupiter orbits the Sun once every 11.8 Earth years.</h2>
+        <p>From our point of view on Earth, it appears to move slowly in the sky, taking months to move from one constellation to another.</p>
+    </div>
+
+    <input type="radio" id="readSaturn" name="saturnRead" class="read">
+    <label for="closeSaturn" class="closeBig"></label>
+    <input type="radio" id="closeSaturn" name="saturnRead" class="read">
+    <div class="panel">
+        <h1>Saturn</h1>
+        <p>Saturn is the sixth planet from the sun and the second largest planet in the solar system. Saturn was the Roman name for Cronus, the lord of the Titans in Greek mythology. Saturn is the root of the English word "Saturday."</p>
+        <p>Saturn is the farthest planet from Earth visible to the naked human eye, but it is through a telescope that the planet's most outstanding features can be seen: Saturn's rings. Although the other gas giants in the solar system — Jupiter, Uranus and Neptune — also have rings, those of Saturn are without a doubt the most extraordinary.</p>
+        <img src="http://ak0.picdn.net/shutterstock/videos/4049260/thumb/1.jpg" alt="Saturn">
+        <h2>Saturn can be seen with the naked eye.</h2>
+        <p>It is the fifth brightest object in the solar system and is also easily studied through binoculars or a small telescope.</p>
+        <h2>Saturn was known to the ancients, including the Babylonians and Far Eastern observers.</h2>
+        <p>It is named for the Roman god Saturnus, and was known to the Greeks as Cronus.</p>
+        <h2>Saturn is the flattest planet.</h2>
+        <p>Its polar diameter is 90% of its equatorial diameter, this is due to its low density and fast rotation. Saturn turns on its axis once every 10 hours and 34 minutes giving it the second-shortest day of any of the solar system’s planets.</p>
+        <h2>Saturn orbits the Sun once every 29.4 Earth years.</h2>
+        <p>Its slow movement against the backdrop of stars earned it the nickname of “Lubadsagush” from the ancient Assyrians. The name means “oldest of the old”.</p>
+    </div>
+
+    <input type="radio" id="readUranus" name="uranusRead" class="read">
+    <label for="closeUranus" class="closeBig"></label>
+    <input type="radio" id="closeUranus" name="uranusRead" class="read">
+    <div class="panel">
+        <h1>Uranus</h1>
+        <p>Uranus is the seventh planet from the sun and the first to be discovered by scientists. Although Uranus is visible to the naked eye, it was long mistaken as a star because of the planet's dimness and slow orbit. The planet is also notable for its dramatic tilt, which causes its axis to point nearly directly at the sun.</p>
+        <p>British astronomer William Herschel discovered Uranus accidentally on March 13, 1781, with his telescope while surveying all stars down to those about 10 times dimmer than can be seen by the naked eye. One "star" seemed different, and within a year Uranus was shown to follow a planetary orbit.</p>
+        <img src="data:image/jpeg;base64,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" alt="Uranus">
+        <h2>Uranus was officially discovered by Sir William Herschel in 1781.</h2>
+        <p>It is too dim to have been seen by the ancients. At first Herschel thought it was a comet, but several years later it was confirmed as a planet. Herscal tried to have his discovery named “Georgian Sidus” after King George III. The name Uranus was suggested by astronomer Johann Bode. The name comes from the ancient Greek deity Ouranos.</p>
+        <h2>Uranus turns on its axis once every 17 hours, 14 minutes.</h2>
+        <p>The planet rotates in a retrograde direction, opposite to the way Earth and most other planets turn.</p>
+        <h2>Uranus makes one trip around the Sun every 84 Earth years.</h2>
+        <p>During some parts of its orbit one or the other of its poles point directly at the Sun and get about 42 years of direct sunlight. The rest of the time they are in darkness.</p>
+        <h2>Uranus is often referred to as an “ice giant” planet.</h2>
+        <p>Like the other gas giants, it has a hydrogen upper layer, which has helium mixed in. Below that is an icy “mantle, which surrounds a rock and ice core. The upper atmosphere is made of water, ammonia and the methane ice crystals that give the planet its pale blue colour.</p>
+    </div>
+
+    <input type="radio" id="readNeptune" name="neptuneRead" class="read">
+    <label for="closeNeptune" class="closeBig"></label>
+    <input type="radio" id="closeNeptune" name="neptuneRead" class="read">
+    <div class="panel">
+        <h1>Neptune</h1>
+        <p>Neptune is the eighth planet from the sun. It was the first planet to get its existence predicted by mathematical calculations before it was actually seen through a telescope on Sept. 23, 1846. Irregularities in the orbit of Uranus led French astronomer Alexis Bouvard to suggest that the gravitational pull from another celestial body might be responsible. German astronomer Johann Galle then relied on subsequent calculations to help spot Neptune via telescope. Previously, astronomer Galileo Galilei sketched the planet, but he mistook it for a star due to its slow motion. In accordance with all the other planets seen in the sky, this new world was given a name from Greek and Roman mythology — Neptune, the Roman god of the sea.</p>
+        <p>Only one mission has flown by Neptune – Voyager 2 in 1989 – meaning that astronomers have done most studies using ground-based telescopes. Today, there are still many mysteries about the cool, blue planet, such as why its winds are so speedy and why its magnetic field is offset.</p>
+        <img src="data:image/jpeg;base64,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" alt="Neptune">
+        <h2>Neptune was not known to the ancients.</h2>
+        <p>It is not visible to the naked eye and was first observed in 1846. Its position was determined using mathematical predictions. It was named after the Roman god of the sea.</p>
+        <h2>Neptune spins on its axis very rapidly.</h2>
+        <p>Its equatorial clouds take 18 hours to make one rotation. This is because Neptune is not solid body.</p>
+        <h2>Neptune is the smallest of the ice giants.</h2>
+        <p>Despite being smaller than Uranus, Neptune has a greater mass. Below its heavy atmosphere, Uranus is made of layers of hydrogen, helium, and methane gases. They enclose a layer of water, ammonia and methane ice. The inner core of the planet is made of rock.</p>
+        <h2>The atmosphere of Neptune is made of hydrogen and helium, with some methane.</h2>
+        <p>The methane absorbs red light, which makes the planet appear a lovely blue. High, thin clouds drift in the upper atmosphere.</p>
+    </div>
+
+    <input type="radio" id="readPluto" name="plutoRead" class="read">
+    <label for="closePluto" class="closeBig"></label>
+    <input type="radio" id="closePluto" name="plutoRead" class="read">
+    <div class="panel">
+        <h1>Pluto</h1>
+        <p>Pluto, once considered the ninth and most distant planet from the sun, is now the largest known dwarf planet in the solar system. It is also one of the largest known members of the Kuiper Belt, a shadowy zone beyond the orbit of Neptune thought to be populated by hundreds of thousands of rocky, icy bodies each larger than 62 miles (100 kilometers) across, along with 1 trillion or more comets.</p>
+        <p>In 2006, Pluto was reclassified as a dwarf planet, a change widely thought of as a demotion. The question of Pluto's planet status has attracted controversy and stirred debate in the scientific community, and among the general public, since then. In 2017, a science group (including members of the New Horizon mission) proposed a new definition of planethood based on "round objects in space smaller than stars," which would make the number of planets in our solar system expand from 8 to roughly 100.</p>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/asd.jpeg" alt="Pluto">
+        <h2>Pluto is named after the Greek god of the underworld.</h2>
+        <p>This is a later name for the more well known Hades and was proposed by Venetia Burney an eleven year old schoolgirl from Oxford, England.</p>
+        <h2>Pluto was reclassified from a planet to a dwarf planet in 2006.</h2>
+        <p>This is when the IAU formalised the definition of a planet as “A planet is a celestial body that (a) is in orbit around the Sun, (b) has sufficient mass for its self-gravity to overcome rigid body forces so that it assumes a hydrostatic equilibrium (nearly round) shape, and (c) has cleared the neighbourhood around its orbit.”</p>
+        <h2>Pluto was discovered on February 18th, 1930 by the Lowell Observatory.</h2>
+        <p>For the 76 years between Pluto being discovered and the time it was reclassified as a dwarf planet it completed under a third of its orbit around the Sun.</p>
+        <h2>Pluto has five known moons.</h2>
+        <p>The moons are Charon (discovered in 1978,), Hydra and Nix (both discovered in 2005), Kerberos originally P4 (discovered 2011) and Styx originally P5 (discovered 2012) official designations S/2011 (134340) 1 and  S/2012 (134340) 1.</p>
+    </div>
+</body>
+</html>
